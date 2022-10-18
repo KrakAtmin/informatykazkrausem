@@ -15,20 +15,20 @@ bool CzyPoprawnyAdres(string adres) //tworzenie nowej funkcji
         if (i!=j) return false; //sprawdza czy i jest różne od j, Jeżeli tak to kontynuuje pętlę
 
         int k = dl-1; //sprawdzanie index kropki od tyłu
-        while (adres[k]!='.' && k>0) k--; //pętla while sprawdza czy wartość k jest różna od indeksu . i czy k jest większe od 0, odejmuuje od k wartość 1 (k--)
-        if (adres[k]!='.'||!(k==dl-3||k==dl-4)) return false;
+        while (adres[k]!='.' && k>0) k--; //pętla while sprawdza czy na indeksie k znajduje sie znak . i czy k jest większe od 0, odejmuuje od k wartość 1 (k--)
+        if (adres[k]!='.'||!(k==dl-3||k==dl-4)) return false; //if sprawdza czy indeks o wartości k jest różny od . lub czy jest rózny od (k równego dl-3 lub k równy dl-4) [nie wiem o co chodzi]
 
         if (k-i<=1) return false; //sprawdzanie czy kropka jest po @
 
-        return true;
+        return true; //zwraca wartość true jeżeli wszystkie ify zawiodły aka. adres jest poprawny
     }
 
 int main()
 {
     string adres;
     cin >> adres;
-    cout << CzyPoprawnyAdres(adres);
-    if (CzyPoprawnyAdres(adres) == true) {
+    cout << CzyPoprawnyAdres(adres); //wyrzuca wartośc 0(false) lub 1(true)
+    if (CzyPoprawnyAdres(adres) == true) { //if sprawdza czy funkcja CzyPoprawnyAdres zwraca wartość true
         cout << "Adres poprawny";
     } else {
         cout << "Adres niepoprawny";
